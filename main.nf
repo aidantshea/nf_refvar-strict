@@ -20,9 +20,21 @@ process FASTQC {
     """
 }
 
+/*
+ * Pipeline parameters
+ */
+params {
+    samplesheet: Path
+}
+
 workflow {
+
     main:
-    FASTQC(params.input_fastq)
+    fastq_ch = channel.fromPath(params.samplesheet)
+        .splitCsv(header: true)
+        .flatMap { row -> file(row.fastq_1) }
+
+    FASTQC(fastq_ch)
 
     publish: 
     report  = FASTQC.out.html
