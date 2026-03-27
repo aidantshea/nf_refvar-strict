@@ -11,8 +11,8 @@ process FASTQC {
     path fastq
 
     output:
-    path "*_fastqc.html",   emit: html
-    path "*_fastqc.zip",    emit: zip
+    path "${fastq.simpleName}_fastqc.html",     emit: html
+    path "${fastq.simpleName}_fastqc.zip",      emit: zip
 
     script:
     """
