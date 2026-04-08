@@ -1,0 +1,4 @@
+{
+    "samplesheet": "${projectDir}/assets/example_input/samplesheet.csv",
+    "adapter_list": "${projectDir}/assets/adapters/adapters_greninger.fasta"
+}
