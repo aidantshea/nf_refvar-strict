@@ -23,6 +23,8 @@ nextflow run main.nf \
     -params-file test_run.json
 ```
 
+[Test Files](./assets/README.md)
+
 ## CLI Options
 
 ### Required Parameters
